@@ -51,7 +51,7 @@ export default function RootLayout({
         {/* MAIN CONTENT COLUMN */}
         <div className="relative z-10 flex flex-col min-h-screen">
           <Header />
-          <main className="flex-1 w-full max-w-[1440px] mx-auto px-6 lg:px-12">
+          <main className="flex-1 w-full max-w-auto mx-auto px-6 lg:px-12">
             {children}
           </main>
           <Footer />
