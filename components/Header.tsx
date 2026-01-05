@@ -54,7 +54,6 @@ export default function Header() {
       </nav>
 
       {/* MOBILE MENU PANEL */}
-      {/* MOBILE MENU PANEL */}
 {mobileMenuOpen && (
   <div className="fixed inset-0 z-[100] bg-white px-6 py-6 lg:hidden">
     {/* HEADER INSIDE MENU: Added 'items-center' and 'justify-between' */}

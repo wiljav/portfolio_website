@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Services from "@/components/Services";
 import Brands from "@/components/Brands";
 import Footer from "@/components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Configure Karla
 const karla = Karla({
@@ -55,6 +56,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-1 w-full max-w-auto mx-auto px-6 lg:px-12">
             {children}
+            <SpeedInsights />
           </main>
           <Services />
           <Brands />

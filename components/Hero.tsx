@@ -52,9 +52,12 @@
 //   );
 // }
 "use client";
+import AnimatedColumn from "@/components/AnimatedColumn";
 import Spline from '@splinetool/react-spline';
 
 export default function Hero() {
+  const i = 0;
+  const isEven = i % 2 === 0;
   return (
     <div className="relative isolate mt-20 px-6 pt-10 lg:px-8 bg-transparent overflow-hidden">
       <div className="relative mx-auto max-w-7xl py-12 lg:py-48 z-10">
@@ -64,9 +67,12 @@ export default function Hero() {
           
           {/* LEFT COLUMN: TEXT */}
           <div className="text-left z-20">
-            <h1 className="text-[45px] lg:text-[100px] font-semibold tracking-tight text-[#00ffdd] leading-[0.9] uppercase">
+            <AnimatedColumn direction="bottom">
+            <h1 className="text-[45px] lg:text-[100px] font-semibold tracking-tight text-[#00ffdd] leading-[0.9]">
               Hi. I'm<br />Julia<br />Sand.
             </h1>
+            </AnimatedColumn>
+            <AnimatedColumn direction="right">
             <p className="mt-8 text-sm lg:text-lg font-medium text-gray-500 uppercase">
               A DESIGNER WORKING FROM HELSINKI / REMOTE
             </p>
@@ -75,6 +81,7 @@ export default function Hero() {
                 Contact Me
               </a>
             </div>
+            </AnimatedColumn>
           </div>
 
           {/* RIGHT COLUMN: THE CROPPER */}
