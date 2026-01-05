@@ -54,32 +54,41 @@ export default function Header() {
       </nav>
 
       {/* MOBILE MENU PANEL */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white px-6 py-6 lg:hidden">
-          <div className="flex items-center justify-between">
-            <img src="/logo.gif" alt="Logo" className="h-12 w-auto" />
-            <button onClick={() => setMobileMenuOpen(false)} className="p-2">
-              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div className="mt-10 flow-root">
-            <div className="flex flex-col gap-y-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-2xl tracking-widest uppercase ${link.bold ? 'font-bold' : 'font-normal'}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* MOBILE MENU PANEL */}
+{mobileMenuOpen && (
+  <div className="fixed inset-0 z-[100] bg-white px-6 py-6 lg:hidden">
+    {/* HEADER INSIDE MENU: Added 'items-center' and 'justify-between' */}
+    <div className="flex items-center justify-between">
+      {/* LOGO */}
+      <img src="/logo.gif" alt="Logo" className="h-12 w-auto" />
+      
+      {/* THE CLOSE BUTTON: Added pr-2 to ensure it doesn't hit the screen edge */}
+      <button 
+        onClick={() => setMobileMenuOpen(false)} 
+        className="p-2 mr-2 text-black hover:text-[#00ffdd] transition-colors"
+      >
+        <span className="sr-only">Close menu</span>
+        <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    {/* MENU LINKS */}
+    <div className="mt-10 flex flex-col gap-y-8 pl-4">
+      {navLinks.map((link) => (
+        <a
+          key={link.name}
+          href={link.href}
+          className={`text-3xl tracking-widest uppercase ${link.bold ? 'font-bold' : 'font-normal'}`}
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          {link.name}
+        </a>
+      ))}
+    </div>
+  </div>
+)}
     </header>
   );
 }
