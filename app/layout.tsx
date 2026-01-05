@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { Karla } from "next/font/google"; // Import from Google Fonts
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+// Configure Karla
+const karla = Karla({
+  subsets: ["latin"],
+  weight: ["400", "700"], // Select weights you need
+  variable: "--font-karla", // Define the variable name
+});
 
 const neueMetana_bold = localFont({
   src: "../public/fonts/NeueMetana-Bold.ttf",
@@ -24,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${neueMetana.variable}`}>
+    <html lang="en" className={`scroll-smooth ${neueMetana.variable} ${karla.variable}`}>
       <body className="antialiased bg-transparent font-sans relative">
         
         {/* GLOBAL BACKGROUND ELEMENTS */}
