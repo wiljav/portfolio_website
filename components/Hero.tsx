@@ -16,10 +16,10 @@ export default function Hero() {
           
           {/* LEFT: TEXT */}
           <div className="text-left z-20">
-            <h1 className="text-[60px] sm:text-[100px] font-semibold tracking-tight text-[#00ffdd] leading-[0.9] uppercase">
+            <h1 className="text-[45px] lg:text-[100px] font-semibold tracking-tight text-[#00ffdd] leading-[0.9] uppercase">
               Hi. I'm<br />Julia<br />Sand.
             </h1>
-            <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl/8 uppercase">
+            <p className="mt-8 text-sm lg:text-lg font-medium text-gray-500 sm:text-xl/8 uppercase">
               A DESIGNER WORKING FROM HELSINKI / REMOTE
             </p>
             <div className="mt-10 flex items-center justify-left">
@@ -29,19 +29,22 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT: FITTED BOX WITH TOP OFFSET */}
-          {/* 1. Changed to 'relative' so it's visible.
-            2. Added 'translate-y-12' (or 20) to push the top down from the text level.
-          */}
-          <div className="absolute w-full h-[500px] lg:h-[700px] overflow-hidden z-10 translate-y-10 lg:translate-y-20">
-             {/* @ts-ignore */}
-            <spline-viewer 
-              url="https://prod.spline.design/kXWJzYlgxRRaZ0n8/scene.splinecode" 
-              background="transparent"
-              // Removed the massive scale so it fits the box naturally
-              className="absolute top-0 -left-10 lg:-left-20 w-[120%] h-full scale-110 lg:scale-125 origin-left"
-            />
-          </div>
+          {/* RIGHT: THE CROPPER */}
+{/* Increased mobile height to 350px and added mt-10 to separate it from text */}
+<div className="relative lg:absolute lg:right-0 mt-10 lg:mt-0 w-full lg:w-1/2 h-[350px] lg:h-[700px] overflow-hidden z-10 translate-y-10 lg:translate-y-20">
+  {/* @ts-ignore */}
+  <spline-viewer 
+    url="https://prod.spline.design/kXWJzYlgxRRaZ0n8/scene.splinecode" 
+    background="transparent"
+    /**
+     * THE CROP FIX:
+     * 1. Changed scale-50 to scale-150 on mobile to zoom in.
+     * 2. Added -left-20 on mobile to slice the empty space.
+     * 3. w-[150%] gives the model room to be shifted left.
+     */
+    className="relative lg:absolute top-0 right-50 lg:right-80 w-[50%] lg:w-[120%] h-full scale-50 lg:scale-125 lg:origin-right origin-left"
+  />
+</div>
           
         </div>
       </div>

@@ -7,6 +7,7 @@
   /* Adding Wix-specific spacing/fonts if needed */
   /* --font-sans: "Inter", ui-sans-serif, system-ui; */
   --font-sans: var(--font-metana-regular), ui-sans-serif, system-ui;
+  --font-karla: var(--font-karla), ui-sans-serif, system-ui;
 }
 
 /* EXACT CSS FROM YOUR SOURCE FILES */
@@ -39,7 +40,19 @@ body {
 }
 
 /* Force headers to use the boldest version for the Metana look */
-h1 {
-  letter-spacing: -0.04em;
-  /* text-transform: uppercase; */
+h2 {
+  color: #00F6D6;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  /* Mobile First */
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 38px;
+    margin-bottom: 8px;
+  }
 }
