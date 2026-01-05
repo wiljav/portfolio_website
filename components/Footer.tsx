@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="flex items-center gap-10 -rotate-90 origin-center pointer-events-auto whitespace-nowrap">
             <a 
               href="#contact" 
-              className="inline-flex items-center justify-center border-[1.5px] border-black border-solid bg-white px-6 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-black antialiased rounded-full hover:bg-[#00ffdd] hover:border-[#00ffdd] transition-all duration-300 select-none"
+              className="inline-flex items-center justify-center border-[1.5px] border-black border-solid px-6 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-black antialiased rounded-full hover:bg-[#00ffdd] hover:border-[#00ffdd] transition-all duration-300 select-none"
             >
               Contact
             </a>

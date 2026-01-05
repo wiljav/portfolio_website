@@ -4,55 +4,66 @@ import AnimatedColumn from "@/components/AnimatedColumn";
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ fontFamily: 'var(--font-sans), sans-serif' }}>
       {/* 1. The 3D Hero Section */}
       <Hero />
 
-      {/* 2. The Projects Section - REDUCED TOP PADDING */}
+      {/* 2. The Projects Section */}
       <section id="work" className="relative z-20 bg-transparent pt-10 pb-32">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* REDUCED GAP FROM 40 TO 20 */}
+        <div className="max-w-7xl mx-auto px-6 mb-30">
           <div className="flex flex-col gap-20"> 
-            {projects.map((project) => (
-  <div key={project.id} className="py-12 md:py-24 border-b border-gray-100 last:border-0">
-    {/* FLEX WRAPPER: column-reverse on mobile, row on desktop */}
-    <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
-      
-      {/* Column 1: The Images */}
-      <div className="w-full md:w-1/2">
-        <AnimatedColumn direction="left">
-          <div className="relative w-full aspect-[4/3] flex items-center justify-center">
-            {/* PHOTO 2 */}
-            <div className="absolute top-10 left-5 md:top-20 md:left-10 w-full h-[200px] md:h-[250px] z-0 overflow-hidden shadow-lg opacity-40 scale-95">
-              <img src={project.image2} alt="Layer" className="w-full h-full object-cover" />
-            </div>
-            {/* PHOTO 1 */}
-            <div className="relative z-10 w-[90%] md:w-full overflow-hidden shadow-2xl rounded-sm">
-              <img src={project.image1} alt={project.title} className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </AnimatedColumn>
-      </div>
+            {projects.map((project, i) => {
+              // Logic: Even numbers (0, 2) = Standard, Odd numbers (1, 3) = Reversed
+              const isEven = i % 2 === 0;
 
-      {/* Column 2: Text Details */}
-      <div className="w-full md:w-1/2 text-center md:text-left">
-        <AnimatedColumn direction="right">
-          <div className="space-y-6">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter uppercase">
-              {project.title}
-            </h2>
-            <div className="pt-4">
-              <a href="#" className="inline-block border-2 border-black px-8 py-3 text-xs font-bold hover:bg-[#00ffdd] rounded-full transition-all">
-                SEE MORE
-              </a>
-            </div>
-          </div>
-        </AnimatedColumn>
-      </div>
+              return (
+                <div key={project.id} className="py-12 lg:mb-14  last:border-0">
+                  {/* FLEX WRAPPER: Alternates row direction on desktop */}
+                  <div className={`flex flex-col-reverse items-center gap-12 lg:gap-10 ${
+                    isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}>
+                    
+                    {/* Column 1: The Images */}
+                    <div className="w-full md:w-1/2">
+                      <AnimatedColumn direction={isEven ? "left" : "right"}>
+                        <div className="relative w-full aspect-[3/3] flex items-center justify-center">
+                          {/* PHOTO 2 (Background) */}
+                          <div className={`absolute top-10 lg:top-75 w-full z-0 overflow-hidden scale-70 ${
+                    isEven ? "lg:left-90" : "lg:right-90"
+                  }` }>
+                            <img src={project.image2} alt="Layer" className="w-full h-full object-cover" />
+                          </div>
+                          {/* PHOTO 1 (Foreground) */}
+                          <div className="relative z-10 w-[90%] lg:w-[90%] lg:w-full  lg:scale-80 overflow-hidden">
+                            <img src={project.image1} alt={project.title} className="w-full h-full object-cover" />
+                          </div>
+                        </div>
+                      </AnimatedColumn>
+                    </div>
 
-    </div>
-  </div>
-))}
+                    {/* Column 2: Text Details */}
+                    <div className="w-full md:w-1/2 text-center md:text-left">
+                      <AnimatedColumn direction={isEven ? "right" : "left"}>
+                        <div className="space-y-6">
+                          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter uppercase antialiased">
+                            {project.title}
+                          </h2>
+                          <div className="pt-4">
+                            <a 
+                              href={project.url} 
+                              className="inline-block border-[1.5px] border-black px-8 py-3 text-[10px] font-bold tracking-widest hover:bg-[#00ffdd] rounded-full transition-all antialiased uppercase"
+                            >
+                              See More
+                            </a>
+                          </div>
+                        </div>
+                      </AnimatedColumn>
+                    </div>
+
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
