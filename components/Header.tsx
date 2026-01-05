@@ -15,13 +15,13 @@ export default function Header() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <nav aria-label="Global" className="mx-auto max-w-7xl p-6 lg:px-8 flex items-center justify-between">
+      <nav aria-label="Global" className="flex items-center justify-between w-full px-6 py-4">
         
         {/* LOGO */}
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Julia Sand</span>
-            <img src="/logo.gif" alt="Julia Sand Logo" className="h-12 lg:h-16 w-auto" />
+            <img src="/logo.gif" alt="Julia Sand Logo" className="h-12 lg:h-32 w-auto" />
           </a>
         </div>
 
@@ -39,7 +39,7 @@ export default function Header() {
         </div>
 
         {/* DESKTOP MENU (Hidden on Mobile) */}
-        <div className="hidden lg:grid grid-flow-col grid-rows-2 gap-x-8 gap-y-2 text-right">
+        <div className="hidden lg:grid grid-flow-col grid-rows-2 gap-x-8 gap-y-2 text-left">
           {navLinks.map((link) => (
             <div key={link.name}>
               <a 

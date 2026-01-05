@@ -9,14 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@splinetool/react-spline": "^0.0.0",
-    "@splinetool/runtime": "^1.9.0",
     "framer-motion": "^11.15.0",
     "next": "^15.1.11",
+    "or": "^0.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.12.29",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^20",
     "@types/react": "^19",

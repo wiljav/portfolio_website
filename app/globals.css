@@ -56,3 +56,7 @@ h2 {
     margin-bottom: 8px;
   }
 }
+
+canvas {
+  background: transparent !important;
+}
