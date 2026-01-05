@@ -1,0 +1,25 @@
+your-portfolio-repo/
+├── .github/
+│   └── workflows/
+│       └── nextjs.yml           # Automation file for GitHub Actions to build & deploy
+├── public/                      # Static assets served as-is
+│   ├── projects/                # Folder for your 20 project images
+│   │   ├── project1.jpg
+│   │   └── project2.png
+│   ├── CNAME                    # Text file with your custom domain (e.g., yourdomain.com)
+│   └── favicon.ico
+├── src/                         # All your source code
+│   ├── app/                     # Next.js App Router directory
+│   │   ├── layout.tsx           # Global wrapper (Fonts, Navbar, Footer)
+│   │   ├── page.tsx             # Your homepage (UX Case Studies)
+│   │   └── globals.css          # Tailwind CSS global styles
+│   ├── components/              # Reusable UI parts (animations, cards)
+│   │   ├── AnimatedColumn.tsx   # Framer Motion component for slide-ins
+│   │   └── ProjectCard.tsx      
+│   └── data/
+│       └── projects.json        # "Database" file for project titles & descriptions
+├── next.config.js               # Critical: contains { output: 'export' }
+├── tailwind.config.ts           # Tailwind CSS configuration
+├── package.json                 # Project dependencies & scripts
+├── tsconfig.json                # TypeScript configuration
+└── .gitignore                   # Files to exclude from GitHub (e.g., node_modules)

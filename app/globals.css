@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  /* This replaces the 'brand' color from your config file */
+  --color-brand: #00ffdd;
+  
+  /* Adding Wix-specific spacing/fonts if needed */
+  /* --font-sans: "Inter", ui-sans-serif, system-ui; */
+  --font-sans: var(--font-metana-regular), ui-sans-serif, system-ui;
+}
+
+/* EXACT CSS FROM YOUR SOURCE FILES */
+.background {
+  clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.background .second_background {
+  clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);
+  will-change: transform;
+}
+
+
+
+/* Add to your existing globals.css */
+.photo-shadow {
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* Optional: Add a subtle paper texture to the white borders */
+.photo-border {
+  border: 0px solid black;
+  background: white;
+}
+
+/* Force headers to use the boldest version for the Metana look */
+h1 {
+  letter-spacing: -0.04em;
+  /* text-transform: uppercase; */
+}
