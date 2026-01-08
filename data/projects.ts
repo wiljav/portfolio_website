@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "UX/UI design",
-    url: "./ux-ui-design",
+    url: "./ux-design",
     image1: "/projects/project1_1.jpg",
     image2: "/projects/project1_2.jpg"//,
     // description: "Detailed description here."

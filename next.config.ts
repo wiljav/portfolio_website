@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
     // This ensures minor type mismatches don't kill the build
     ignoreBuildErrors: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'static.wixstatic.com',
+        port: '',
+        pathname: '/media/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

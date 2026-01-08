@@ -56,8 +56,8 @@ import AnimatedColumn from "@/components/AnimatedColumn";
 import Spline from '@splinetool/react-spline';
 
 export default function Hero() {
-  const i = 0;
-  const isEven = i % 2 === 0;
+  // const i = 0;
+  // const isEven = i % 2 === 0;
   return (
     <div className="relative isolate mt-20 px-6 pt-10 lg:px-8 bg-transparent overflow-hidden">
       <div className="relative mx-auto max-w-7xl py-12 lg:py-48 z-10">
